@@ -23,7 +23,7 @@ setup(
     version=read_version(),  # Update the version as necessary
     author="Artezaru",  # Your name
     author_email="artezaru.github@proton.me",  # Your email
-    description="",  # Short description of the package
+    description="Chat GPT with command line",  # Short description of the package
     long_description=long_description,  # Read the long description from README
     long_description_content_type="text/markdown",  # Format of the long description
     url="https://github.com/Artezaru/pygpt.git",  # URL to the project repository
@@ -35,4 +35,10 @@ setup(
     ],
     python_requires='>=3.6',  # Minimum Python version required
     install_requires=read_requirements(),
+    entry_points={
+        'console_scripts': [
+            'pygpt = pygpt.__main__:main',  # Define the pygpt command to run main()
+        ],
+    },
 )
+
