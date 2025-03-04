@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Usage &#8212; pygpt 1.0.1 documentation</title>
+    <title>Usage &#8212; pygpt 1.0.2 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="_static/documentation_options.js?v=292eb321"></script>
+    <script src="_static/documentation_options.js?v=1ed6394b"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'usage';</script>
@@ -109,7 +109,7 @@
   
   
   
-    <p class="title logo__title">pygpt 1.0.1 documentation</p>
+    <p class="title logo__title">pygpt 1.0.2 documentation</p>
   
 </a></div>
     
@@ -327,98 +327,84 @@
 <p>1. <strong>Install the package</strong>:
 Make sure the <cite>pygpt</cite> package is installed and properly configured.</p>
 <p>2. <strong>Set your OpenAI API key</strong>:
-Export your API key as an environment variable:
-.. code-block:: console</p>
-<blockquote>
-<div><p>export OPENAI_API_KEY=your-api-key</p>
-</div></blockquote>
+Export your API key as an environment variable:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">export OPENAI_API_KEY=your-api-key</span>
+</pre></div>
+</div>
 <p>3. <strong>Run the interface</strong>:
-Start the <cite>pygpt</cite> terminal interface by running the following command:
-.. code-block:: console</p>
-<blockquote>
-<div><p>pygpt</p>
-</div></blockquote>
+Start the <cite>pygpt</cite> terminal interface by running the following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pygpt</span>
+</pre></div>
+</div>
 <p>4. <strong>Interact with the tool</strong>:
 Use the commands listed in <a class="reference internal" href="commands.html"><span class="doc">Commands</span></a> to interact with the GPT discussions.</p>
 </section>
 <section id="basic-workflow">
 <h2>Basic Workflow<a class="headerlink" href="#basic-workflow" title="Link to this heading">#</a></h2>
 <p>1. <strong>Create a new discussion</strong>:
-To start a new discussion, use the <cite>!new</cite> command:
-.. code-block:: console</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; !new MyFirstDiscussion
+To start a new discussion, use the <cite>!new</cite> command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !new MyFirstDiscussion</span>
 </pre></div>
 </div>
 <p>2. <strong>Add messages to the discussion</strong>:
-Simply type your messages to send them to the GPT model:
-.. code-block:: console</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; Hello, GPT! Can you help me with a Python question?
-GPT: Sure! What&#39;s your question?
+Simply type your messages to send them to the GPT model:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; Hello, GPT! Can you help me with a Python question?</span>
+<span class="go">GPT: Sure! What&#39;s your question?</span>
 </pre></div>
 </div>
 <p>3. <strong>Copy the last assistant response</strong>:
-To quickly copy the last response, use the <cite>!copy</cite> command:
-.. code-block:: console</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; !copy
-Last assistant response copied to clipboard.
+To quickly copy the last response, use the <cite>!copy</cite> command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !copy</span>
+<span class="go">Last assistant response copied to clipboard.</span>
 </pre></div>
 </div>
 <p>4. <strong>Search the discussion history</strong>:
-To find specific content, use the <cite>!search</cite> command:
-.. code-block:: console</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; !search Python
-GPT: Sure! What&#39;s your Python question?
+To find specific content, use the <cite>!search</cite> command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !search Python</span>
+<span class="go">GPT: Sure! What&#39;s your Python question?</span>
 </pre></div>
 </div>
 <p>5. <strong>Set a system message</strong>:
-To configure the system message for context, use <cite>!system</cite>:
-.. code-block:: console</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; !system You are an expert Python assistant.
+To configure the system message for context, use <cite>!system</cite>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !system You are an expert Python assistant.</span>
 </pre></div>
 </div>
 <p>6. <strong>Manage discussions</strong>:
-List and open discussions with <cite>!open</cite>:
-.. code-block:: console</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; !open
+List and open discussions with <cite>!open</cite>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !open</span>
 </pre></div>
 </div>
-<p>Close the current discussion with <cite>!close</cite>:
-.. code-block:: console</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; !close
+<p>Close the current discussion with <cite>!close</cite>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !close</span>
 </pre></div>
 </div>
 <p>7. <strong>Delete discussions</strong>:
-Delete the current discussion:
-.. code-block:: console</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; !delete
+Delete the current discussion:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !delete</span>
 </pre></div>
 </div>
-<p>Delete all discussions:
-.. code-block:: console</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; !delete_all
+<p>Delete all discussions:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !delete_all</span>
 </pre></div>
 </div>
 </section>
 <section id="advanced-options">
 <h2>Advanced Options<a class="headerlink" href="#advanced-options" title="Link to this heading">#</a></h2>
 <p>1. <strong>Set token limits</strong>:
-Use <cite>!token_limit</cite> to define the maximum token limit for a discussion:
-.. code-block:: console</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; !token_limit 2048
+Use <cite>!token_limit</cite> to define the maximum token limit for a discussion:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !token_limit 2048</span>
 </pre></div>
 </div>
 <p>2. <strong>Change GPT models</strong>:
-Switch between GPT models with the <cite>!model</cite> command:
-.. code-block:: console</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; !model gpt-4
+Switch between GPT models with the <cite>!model</cite> command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !model gpt-4</span>
 </pre></div>
 </div>
 </section>
 <section id="help-and-documentation">
 <h2>Help and Documentation<a class="headerlink" href="#help-and-documentation" title="Link to this heading">#</a></h2>
-<p>Use <cite>!help</cite> or <cite>!?</cite> to display the list of commands:
-.. code-block:: console</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; !help
+<p>Use <cite>!help</cite> or <cite>!?</cite> to display the list of commands:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !help</span>
 </pre></div>
 </div>
 <p>Refer to <a class="reference internal" href="commands.html"><span class="doc">Commands</span></a> for a detailed description of each command.</p>
@@ -514,7 +500,7 @@ Switch between GPT models with the <cite>!model</cite> command:
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
     <br/>
   </p>
 </div>
