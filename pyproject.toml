@@ -1,0 +1,49 @@
+[build-system]
+requires = [
+  "setuptools>=42",
+  "setuptools-scm>=8.0"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pygpt"
+requires-python = ">= 3.8"
+dynamic = ["dependencies", "version"]
+description = "Python package for managing and interacting with discussions powered by OpenAI's GPT models"
+license = {file = "LICENSE"}
+authors = [
+{name = "Artezaru", email = "artezaru.websites@proton.me"}
+]
+classifiers = [
+  "Programming Language :: Python"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pygpt", "pygpt*"]
+exclude = ["laboratory", "laboratory.*", "tests", "tests*", "examples", "examples*"]
+
+[tool.setuptools.package-data]
+"pygpt.ressources" = ["*"]
+
+[project.scripts]
+pygpt = "pygpt.__main__:__main__"
+
+[project.gui-scripts]
+pygpt-gui = "pygpt.__main__:__main_gui__"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+version = {attr = "pygpt.__version__.__version__"}
+
+[project.optional-dependencies]
+dev = [
+    "sphinx",
+    "pydata-sphinx-theme",
+    "numpydoc",
+    "pytest",
+    "pyinstaller",
+    "pytest-cov",
+    "bumpver",
+    "pyinstaller"
+]
