@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Usage &#8212; pygpt 0.0.2 documentation</title>
+    <title>pygpt.GPTApi &#8212; pygpt 0.0.2 documentation</title>
   
   
   
@@ -27,25 +27,25 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
   
   <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="_static/documentation_options.js?v=e3a6060d"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'usage';</script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Commands" href="commands.html" />
-    <link rel="prev" title="pygpt.UserInterface" href="api_doc/user_interface.html" />
+    <script src="../_static/documentation_options.js?v=e3a6060d"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api_doc/gpt_api';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pygpt.Message" href="message.html" />
+    <link rel="prev" title="pygpt.Discussion" href="discussion.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -67,7 +67,7 @@
   <dialog id="pst-search-dialog">
     
 <form class="bd-search d-flex align-items-center"
-      action="search.html"
+      action="../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -103,7 +103,7 @@
     
   
 
-<a class="navbar-brand logo" href="index.html">
+<a class="navbar-brand logo" href="../index.html">
   
   
   
@@ -125,28 +125,28 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="installation.html">
+  <a class="nav-link nav-internal" href="../installation.html">
     Installation
   </a>
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="api.html">
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api.html">
     API Reference
   </a>
 </li>
 
 
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="#">
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../usage.html">
     Usage
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="commands.html">
+  <a class="nav-link nav-internal" href="../commands.html">
     Commands
   </a>
 </li>
@@ -225,28 +225,28 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="installation.html">
+  <a class="nav-link nav-internal" href="../installation.html">
     Installation
   </a>
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="api.html">
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api.html">
     API Reference
   </a>
 </li>
 
 
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="#">
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../usage.html">
     Usage
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="commands.html">
+  <a class="nav-link nav-internal" href="../commands.html">
     Commands
   </a>
 </li>
@@ -278,7 +278,14 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"></div>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">API:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="discussion.html">pygpt.Discussion</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">pygpt.GPTApi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="message.html">pygpt.Message</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_interface.html">pygpt.UserInterface</a></li>
+</ul>
+</div>
 </nav></div>
     </div>
   
@@ -313,11 +320,14 @@
   <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
-      <a href="index.html" class="nav-link" aria-label="Home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Usage</span></li>
+    
+    <li class="breadcrumb-item"><a href="../api.html" class="nav-link">API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pygpt.GPTApi</span></li>
   </ul>
 </nav>
 </div>
@@ -334,97 +344,78 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="usage">
-<h1>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h1>
-<p>This guide provides step-by-step instructions on how to use the <cite>pygpt</cite> tool for managing discussions with OpenAI’s GPT models.</p>
-<section id="getting-started">
-<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
-<p>1. <strong>Install the package</strong>:
-Make sure the <cite>pygpt</cite> package is installed and properly configured.</p>
-<p>2. <strong>Set your OpenAI API key</strong>:
-Export your API key as an environment variable:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">export OPENAI_API_KEY=your-api-key</span>
-</pre></div>
-</div>
-<p>3. <strong>Run the interface</strong>:
-Start the <cite>pygpt</cite> terminal interface by running the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pygpt</span>
-</pre></div>
-</div>
-<p>4. <strong>Interact with the tool</strong>:
-Use the commands listed in <a class="reference internal" href="commands.html"><span class="doc">Commands</span></a> to interact with the GPT discussions.</p>
-</section>
-<section id="basic-workflow">
-<h2>Basic Workflow<a class="headerlink" href="#basic-workflow" title="Link to this heading">#</a></h2>
-<p>1. <strong>Create a new discussion</strong>:
-To start a new discussion, use the <cite>!new</cite> command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !new MyFirstDiscussion</span>
-</pre></div>
-</div>
-<p>2. <strong>Add messages to the discussion</strong>:
-Simply type your messages to send them to the GPT model:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; Hello, GPT! Can you help me with a Python question?</span>
-<span class="go">GPT: Sure! What&#39;s your question?</span>
-</pre></div>
-</div>
-<p>3. <strong>Copy the last assistant response</strong>:
-To quickly copy the last response, use the <cite>!copy</cite> command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !copy</span>
-<span class="go">Last assistant response copied to clipboard.</span>
-</pre></div>
-</div>
-<p>4. <strong>Search the discussion history</strong>:
-To find specific content, use the <cite>!search</cite> command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !search Python</span>
-<span class="go">GPT: Sure! What&#39;s your Python question?</span>
-</pre></div>
-</div>
-<p>5. <strong>Set a system message</strong>:
-To configure the system message for context, use <cite>!system</cite>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !system You are an expert Python assistant.</span>
-</pre></div>
-</div>
-<p>6. <strong>Manage discussions</strong>:
-List and open discussions with <cite>!open</cite>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !open</span>
-</pre></div>
-</div>
-<p>Close the current discussion with <cite>!close</cite>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !close</span>
-</pre></div>
-</div>
-<p>7. <strong>Delete discussions</strong>:
-Delete the current discussion:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !delete</span>
-</pre></div>
-</div>
-<p>Delete all discussions:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !delete_all</span>
-</pre></div>
-</div>
-</section>
-<section id="advanced-options">
-<h2>Advanced Options<a class="headerlink" href="#advanced-options" title="Link to this heading">#</a></h2>
-<p>1. <strong>Set token limits</strong>:
-Use <cite>!token_limit</cite> to define the maximum token limit for a discussion:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !token_limit 2048</span>
-</pre></div>
-</div>
-<p>2. <strong>Change GPT models</strong>:
-Switch between GPT models with the <cite>!model</cite> command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !model gpt-4</span>
-</pre></div>
-</div>
-</section>
-<section id="help-and-documentation">
-<h2>Help and Documentation<a class="headerlink" href="#help-and-documentation" title="Link to this heading">#</a></h2>
-<p>Use <cite>!help</cite> or <cite>!?</cite> to display the list of commands:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !help</span>
-</pre></div>
-</div>
-<p>Refer to <a class="reference internal" href="commands.html"><span class="doc">Commands</span></a> for a detailed description of each command.</p>
-<p>For more information about the API, refer to the <a class="reference internal" href="api.html"><span class="doc">API Reference</span></a> documentation.</p>
-</section>
+  <section id="pygpt-gptapi">
+<h1>pygpt.GPTApi<a class="headerlink" href="#pygpt-gptapi" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pygpt.GPTApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pygpt.</span></span><span class="sig-name descname"><span class="pre">GPTApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytearray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'gpt-3.5-turbo'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pygpt/gpt_api.html#GPTApi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.GPTApi" title="Link to this definition">#</a></dt>
+<dd><p><cite>GPTApi</cite> is a class that provides an interface to communicate with OpenAI’s GPT models.</p>
+<p>This class facilitates connecting to the OpenAI API using an API key, setting the desired GPT model, and sending messages to obtain responses from the model. The supported models are restricted to <cite>“gpt-3.5-turbo”</cite> and <cite>“gpt-4”</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>api_key</strong> (<em>bytearray</em>) – The API key used to authenticate with the OpenAI API. It must be a <cite>bytearray</cite>.</p></li>
+<li><p><strong>model</strong> (<em>str</em>) – The name of the GPT model to be used. It must be one of the following: <cite>[“gpt-3.5-turbo”, “gpt-4”]</cite>. Default is <cite>“gpt-3.5-turbo”</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="pygpt.GPTApi.api_key">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">api_key</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bytearray</span></em><a class="headerlink" href="#pygpt.GPTApi.api_key" title="Link to this definition">#</a></dt>
+<dd><p>Getter for the api_key attribute.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The API key used for authentication.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bytearray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.GPTApi.ask_gpt">
+<span class="sig-name descname"><span class="pre">ask_gpt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="message.html#pygpt.Message" title="pygpt.message.Message"><span class="pre">Message</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../_modules/pygpt/gpt_api.html#GPTApi.ask_gpt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.GPTApi.ask_gpt" title="Link to this definition">#</a></dt>
+<dd><p>Sends a message to the GPT model and retrieves the response.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<a class="reference internal" href="message.html#pygpt.Message" title="pygpt.Message"><em>Message</em></a>) – A <cite>Message</cite> object containing the message history and the input for the GPT model.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The response content from the GPT model.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If the <cite>message</cite> parameter is not an instance of <cite>Message</cite>.</p></li>
+<li><p><strong>Exceptions</strong> – </p></li>
+<li><p><strong>----------</strong> – </p></li>
+<li><p><strong>openai.AuthenticationError</strong> – Raised if the API key is invalid or not configured correctly.</p></li>
+<li><p><strong>openai.OpenAIError</strong> – Raised for any other API-related errors.</p></li>
+<li><p><strong>Exception</strong> – Raised for any unexpected errors during execution.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pygpt.GPTApi.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pygpt.GPTApi.model" title="Link to this definition">#</a></dt>
+<dd><p>Getter for the model attribute.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The currently configured GPT model.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 
@@ -438,20 +429,20 @@ Switch between GPT models with the <cite>!model</cite> command:</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="api_doc/user_interface.html"
+       href="discussion.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">pygpt.UserInterface</p>
+        <p class="prev-next-title">pygpt.Discussion</p>
       </div>
     </a>
     <a class="right-next"
-       href="commands.html"
+       href="message.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Commands</p>
+        <p class="prev-next-title">pygpt.Message</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -474,10 +465,12 @@ Switch between GPT models with the <cite>!model</cite> command:</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-workflow">Basic Workflow</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-options">Advanced Options</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#help-and-documentation">Help and Documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.GPTApi"><code class="docutils literal notranslate"><span class="pre">GPTApi</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.GPTApi.api_key"><code class="docutils literal notranslate"><span class="pre">GPTApi.api_key</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.GPTApi.ask_gpt"><code class="docutils literal notranslate"><span class="pre">GPTApi.ask_gpt()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.GPTApi.model"><code class="docutils literal notranslate"><span class="pre">GPTApi.model</span></code></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -485,7 +478,7 @@ Switch between GPT models with the <cite>!model</cite> command:</p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/usage.rst.txt"
+      <li><a href="../_sources/api_doc/gpt_api.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div></div>
@@ -503,8 +496,8 @@ Switch between GPT models with the <cite>!model</cite> command:</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">

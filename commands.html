@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Usage &#8212; pygpt 0.0.2 documentation</title>
+    <title>Commands &#8212; pygpt 0.0.2 documentation</title>
   
   
   
@@ -41,11 +41,10 @@
     <script src="_static/documentation_options.js?v=e3a6060d"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'usage';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'commands';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Commands" href="commands.html" />
-    <link rel="prev" title="pygpt.UserInterface" href="api_doc/user_interface.html" />
+    <link rel="prev" title="Usage" href="usage.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -138,15 +137,15 @@
 </li>
 
 
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="#">
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="usage.html">
     Usage
   </a>
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="commands.html">
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
     Commands
   </a>
 </li>
@@ -238,15 +237,15 @@
 </li>
 
 
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="#">
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="usage.html">
     Usage
   </a>
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="commands.html">
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
     Commands
   </a>
 </li>
@@ -317,7 +316,7 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Usage</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Commands</span></li>
   </ul>
 </nav>
 </div>
@@ -334,97 +333,41 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="usage">
-<h1>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h1>
-<p>This guide provides step-by-step instructions on how to use the <cite>pygpt</cite> tool for managing discussions with OpenAI’s GPT models.</p>
-<section id="getting-started">
-<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
-<p>1. <strong>Install the package</strong>:
-Make sure the <cite>pygpt</cite> package is installed and properly configured.</p>
-<p>2. <strong>Set your OpenAI API key</strong>:
-Export your API key as an environment variable:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">export OPENAI_API_KEY=your-api-key</span>
-</pre></div>
-</div>
-<p>3. <strong>Run the interface</strong>:
-Start the <cite>pygpt</cite> terminal interface by running the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pygpt</span>
-</pre></div>
-</div>
-<p>4. <strong>Interact with the tool</strong>:
-Use the commands listed in <a class="reference internal" href="commands.html"><span class="doc">Commands</span></a> to interact with the GPT discussions.</p>
-</section>
-<section id="basic-workflow">
-<h2>Basic Workflow<a class="headerlink" href="#basic-workflow" title="Link to this heading">#</a></h2>
-<p>1. <strong>Create a new discussion</strong>:
-To start a new discussion, use the <cite>!new</cite> command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !new MyFirstDiscussion</span>
-</pre></div>
-</div>
-<p>2. <strong>Add messages to the discussion</strong>:
-Simply type your messages to send them to the GPT model:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; Hello, GPT! Can you help me with a Python question?</span>
-<span class="go">GPT: Sure! What&#39;s your question?</span>
-</pre></div>
-</div>
-<p>3. <strong>Copy the last assistant response</strong>:
-To quickly copy the last response, use the <cite>!copy</cite> command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !copy</span>
-<span class="go">Last assistant response copied to clipboard.</span>
-</pre></div>
-</div>
-<p>4. <strong>Search the discussion history</strong>:
-To find specific content, use the <cite>!search</cite> command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !search Python</span>
-<span class="go">GPT: Sure! What&#39;s your Python question?</span>
-</pre></div>
-</div>
-<p>5. <strong>Set a system message</strong>:
-To configure the system message for context, use <cite>!system</cite>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !system You are an expert Python assistant.</span>
-</pre></div>
-</div>
-<p>6. <strong>Manage discussions</strong>:
-List and open discussions with <cite>!open</cite>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !open</span>
-</pre></div>
-</div>
-<p>Close the current discussion with <cite>!close</cite>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !close</span>
-</pre></div>
-</div>
-<p>7. <strong>Delete discussions</strong>:
-Delete the current discussion:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !delete</span>
-</pre></div>
-</div>
-<p>Delete all discussions:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !delete_all</span>
-</pre></div>
-</div>
-</section>
-<section id="advanced-options">
-<h2>Advanced Options<a class="headerlink" href="#advanced-options" title="Link to this heading">#</a></h2>
-<p>1. <strong>Set token limits</strong>:
-Use <cite>!token_limit</cite> to define the maximum token limit for a discussion:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !token_limit 2048</span>
-</pre></div>
-</div>
-<p>2. <strong>Change GPT models</strong>:
-Switch between GPT models with the <cite>!model</cite> command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !model gpt-4</span>
-</pre></div>
-</div>
-</section>
-<section id="help-and-documentation">
-<h2>Help and Documentation<a class="headerlink" href="#help-and-documentation" title="Link to this heading">#</a></h2>
-<p>Use <cite>!help</cite> or <cite>!?</cite> to display the list of commands:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt; !help</span>
-</pre></div>
-</div>
-<p>Refer to <a class="reference internal" href="commands.html"><span class="doc">Commands</span></a> for a detailed description of each command.</p>
-<p>For more information about the API, refer to the <a class="reference internal" href="api.html"><span class="doc">API Reference</span></a> documentation.</p>
-</section>
+  <section id="commands">
+<h1>Commands<a class="headerlink" href="#commands" title="Link to this heading">#</a></h1>
+<p>The <cite>pygpt</cite> module provides a variety of commands for managing discussions and interacting with OpenAI’s GPT models. Below is a complete list of available commands, along with their descriptions and shortcuts.</p>
+<ul class="simple">
+<li><p><strong>!open</strong> or <strong>!o</strong>
+List all existing discussions and allow the user to open a specific one.</p></li>
+<li><p><strong>!new &lt;title&gt;</strong> or <strong>!n &lt;title&gt;</strong>
+Create a new discussion with the specified title.</p></li>
+<li><p><strong>!close</strong> or <strong>!x</strong>
+Close the current discussion.</p></li>
+<li><p><strong>!model &lt;model&gt;</strong> or <strong>!m &lt;model&gt;</strong>
+Change the GPT model for the current discussion.</p></li>
+<li><p><strong>!title &lt;title&gt;</strong> or <strong>!t &lt;title&gt;</strong>
+Change the title of the current discussion.</p></li>
+<li><p><strong>!delete</strong> or <strong>!d</strong>
+Delete the current discussion. This operation is irreversible.</p></li>
+<li><p><strong>!delete_all</strong> or <strong>!da</strong>
+Delete all discussions. This operation is irreversible.</p></li>
+<li><p><strong>!history</strong> or <strong>!h</strong>
+Display the complete history of the current discussion.</p></li>
+<li><p><strong>!copy</strong> or <strong>!c</strong>
+Copy the last assistant response to the clipboard.</p></li>
+<li><p><strong>!search &lt;content&gt;</strong> or <strong>!f &lt;content&gt;</strong>
+Search for specific content in the complete history of the current discussion.</p></li>
+<li><p><strong>!info</strong> or <strong>!i</strong>
+Display information about the current discussion (e.g., title, model, token limit).</p></li>
+<li><p><strong>!system &lt;message&gt;</strong> or <strong>!sys &lt;message&gt;</strong>
+Set the system message for the current discussion.</p></li>
+<li><p><strong>!token_limit &lt;limit&gt;</strong> or <strong>!tl &lt;limit&gt;</strong>
+Set the token limit for the current discussion.</p></li>
+<li><p><strong>!exit</strong> or <strong>!q</strong>
+Exit the program.</p></li>
+<li><p><strong>!help</strong> or <strong>!?</strong>
+Display the help message with the list of commands.</p></li>
+</ul>
 </section>
 
 
@@ -438,22 +381,13 @@ Switch between GPT models with the <cite>!model</cite> command:</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="api_doc/user_interface.html"
+       href="usage.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">pygpt.UserInterface</p>
+        <p class="prev-next-title">Usage</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="commands.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Commands</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -467,25 +401,10 @@ Switch between GPT models with the <cite>!model</cite> command:</p>
 
 
   <div class="sidebar-secondary-item">
-<div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-workflow">Basic Workflow</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-options">Advanced Options</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#help-and-documentation">Help and Documentation</a></li>
-</ul>
-  </nav></div>
-
-  <div class="sidebar-secondary-item">
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/usage.rst.txt"
+      <li><a href="_sources/commands.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div></div>

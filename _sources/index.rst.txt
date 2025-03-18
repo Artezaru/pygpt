@@ -4,7 +4,20 @@ Welcome to pygpt's documentation!
 Description of the package
 --------------------------
 
-Python package for managing and interacting with discussions powered by OpenAI's GPT models
+The package ``pygpt`` is a Python tool that provides a terminal interface for interacting with OpenAI's GPT models. 
+It allows users to create, manage, and save discussions powered by GPT models.
+
+.. important::
+
+   The package requires an OpenAI API key to function properly.
+   Make sure to set the API key as an environment variable before using the package.
+   
+   The conversation history is save in the ``~/.pygpt`` directory.
+   This is not available yet to change the directory.
+
+
+The list of the implemented commands is provided in the :doc:`./commands` section.
+
 
 Contents
 --------
@@ -22,6 +35,7 @@ The documentation is divided into the following sections:
    ./installation
    ./api
    ./usage
+   ./commands
 
 
 Author

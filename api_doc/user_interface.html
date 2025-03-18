@@ -1,0 +1,750 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pygpt.UserInterface &#8212; pygpt 0.0.2 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=e3a6060d"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api_doc/user_interface';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Usage" href="../usage.html" />
+    <link rel="prev" title="pygpt.Message" href="message.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">pygpt 0.0.2 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../usage.html">
+    Usage
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../commands.html">
+    Commands
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../usage.html">
+    Usage
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../commands.html">
+    Commands
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">API:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="discussion.html">pygpt.Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpt_api.html">pygpt.GPTApi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="message.html">pygpt.Message</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">pygpt.UserInterface</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../api.html" class="nav-link">API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pygpt.UserInterface</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pygpt-userinterface">
+<h1>pygpt.UserInterface<a class="headerlink" href="#pygpt-userinterface" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pygpt.UserInterface">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pygpt.</span></span><span class="sig-name descname"><span class="pre">UserInterface</span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface" title="Link to this definition">#</a></dt>
+<dd><p><cite>UserInterface</cite> handles interactions with the local user for managing discussions.</p>
+<p>Initializes the <cite>UserInterface</cite> object.</p>
+<p>This sets up the basic structure for managing discussions.</p>
+<p>The discussion data is stored in the <cite>~/.pygpt/discussions</cite> directory.</p>
+<p>To set the OpenAI API key, use the environment variable <cite>OPENAI_API_KEY</cite>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">export OPENAI_API_KEY=your-api-key</span>
+</pre></div>
+</div>
+<section id="commands">
+<h2>Commands:<a class="headerlink" href="#commands" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>[bold yellow]!open[/bold yellow] or [bold yellow]!o[/bold yellow]: List all discussions and allow the user to open a specific one.</p></li>
+<li><p>[bold yellow]!new[/bold yellow] &lt;[bold magenta]title[/bold magenta]&gt; or [bold yellow]!n[/bold yellow] &lt;[bold magenta]title[/bold magenta]&gt;: Create a new discussion with the specified title.</p></li>
+<li><p>[bold yellow]!close[/bold yellow] or [bold yellow]!x[/bold yellow]: Close the current discussion.</p></li>
+<li><p>[bold yellow]!model[/bold yellow] &lt;[bold magenta]model[/bold magenta]&gt; or [bold yellow]!m[/bold yellow] &lt;[bold magenta]model[/bold magenta]&gt;: Change the GPT model for the current discussion.</p></li>
+<li><p>[bold yellow]!title[/bold yellow] &lt;[bold magenta]title[/bold magenta]&gt; or [bold yellow]!t[/bold yellow] &lt;[bold magenta]title[/bold magenta]&gt;: Change the title of the current discussion.</p></li>
+<li><p>[bold yellow]!delete[/bold yellow] or [bold yellow]!d[/bold yellow]: Delete the current discussion. This operation is irreversible.</p></li>
+<li><p>[bold yellow]!delete_all[/bold yellow] or [bold yellow]!da[/bold yellow]: Delete all discussions. This operation is irreversible.</p></li>
+<li><p>[bold yellow]!history[/bold yellow] or [bold yellow]!h[/bold yellow]: Display the complete history of the current discussion.</p></li>
+<li><p>[bold yellow]!exit[/bold yellow] or [bold yellow]!q[/bold yellow]: Exit the program.</p></li>
+<li><p>[bold yellow]!copy[/bold yellow] or [bold yellow]!c[/bold yellow]: Copy the last assistant response to the clipboard.</p></li>
+<li><p>[bold yellow]!search[/bold yellow] &lt;[bold magenta]content[/bold magenta]&gt; or [bold yellow]!f[/bold yellow] &lt;[bold magenta]content[/bold magenta]&gt;: Search the content in the complete history of the current discussion.</p></li>
+<li><p>[bold yellow]!info[/bold yellow] or [bold yellow]!i[/bold yellow]: Display information about the current discussion.</p></li>
+<li><p>[bold yellow]!system[/bold yellow] &lt;[bold magenta]message[/bold magenta]&gt; or [bold yellow]!sys[/bold yellow] &lt;[bold magenta]message[/bold magenta]&gt;: Set the system message to the current discussion.</p></li>
+<li><p>[bold yellow]!token_limit[/bold yellow] &lt;[bold magenta]limit[/bold magenta]&gt; or [bold yellow]!tl[/bold yellow] &lt;[bold magenta]limit[/bold magenta]&gt;: Set the token limit for the current discussion before resuming.</p></li>
+<li><p>[bold yellow]!help[/bold yellow] or [bold yellow]!?[/bold yellow]: Display this help message.</p></li>
+</ul>
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.change_model">
+<span class="sig-name descname"><span class="pre">change_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.change_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.change_model" title="Link to this definition">#</a></dt>
+<dd><p>Changes the GPT model for the current discussion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>model</strong> (<em>str</em>) – The name of the GPT model to use.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.close_discussion">
+<span class="sig-name descname"><span class="pre">close_discussion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.close_discussion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.close_discussion" title="Link to this definition">#</a></dt>
+<dd><p>Closes the current discussion and saves the conversation history.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.copy_last_assistant_response">
+<span class="sig-name descname"><span class="pre">copy_last_assistant_response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.copy_last_assistant_response"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.copy_last_assistant_response" title="Link to this definition">#</a></dt>
+<dd><p>Copies the last assistant response to the clipboard.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.create_new_discussion">
+<span class="sig-name descname"><span class="pre">create_new_discussion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.create_new_discussion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.create_new_discussion" title="Link to this definition">#</a></dt>
+<dd><p>Creates a new discussion with the specified title.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>title</strong> (<em>str</em>) – The title of the new discussion.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.delete_all_discussions">
+<span class="sig-name descname"><span class="pre">delete_all_discussions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.delete_all_discussions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.delete_all_discussions" title="Link to this definition">#</a></dt>
+<dd><p>Deletes all discussions. The user must confirm the deletion.
+This operation is irreversible.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.delete_current_discussion">
+<span class="sig-name descname"><span class="pre">delete_current_discussion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.delete_current_discussion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.delete_current_discussion" title="Link to this definition">#</a></dt>
+<dd><p>Deletes the current discussion. The user must confirm the deletion.
+This operation is irreversible.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.display_info">
+<span class="sig-name descname"><span class="pre">display_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.display_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.display_info" title="Link to this definition">#</a></dt>
+<dd><p>Displays information about the current discussion.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.generate_discussion_code">
+<span class="sig-name descname"><span class="pre">generate_discussion_code</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.generate_discussion_code"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.generate_discussion_code" title="Link to this definition">#</a></dt>
+<dd><p>Generates a random code for the current discussion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A randomly generated code for the discussion.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.get_api_key">
+<span class="sig-name descname"><span class="pre">get_api_key</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.get_api_key"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.get_api_key" title="Link to this definition">#</a></dt>
+<dd><p>Retrieves the OpenAI API key from the environment variables.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.handle_command">
+<span class="sig-name descname"><span class="pre">handle_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.handle_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.handle_command" title="Link to this definition">#</a></dt>
+<dd><p>Handles commands prefixed with <cite>!</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>command</strong> (<em>str</em>) – The command name prefixed with <cite>!</cite>.</p></li>
+<li><p><strong>args</strong> (<em>str</em>) – The arguments to the command, if any.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.handle_gpt_interaction">
+<span class="sig-name descname"><span class="pre">handle_gpt_interaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.handle_gpt_interaction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.handle_gpt_interaction" title="Link to this definition">#</a></dt>
+<dd><p>Sends user input to GPT API via the current discussion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>user_input</strong> (<em>str</em>) – The input text to send to GPT.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.handle_input">
+<span class="sig-name descname"><span class="pre">handle_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.handle_input"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.handle_input" title="Link to this definition">#</a></dt>
+<dd><p>Handles user input, checking for commands or passing input to GPT API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>user_input</strong> (<em>str</em>) – The input provided by the user.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.is_discussion_open">
+<span class="sig-name descname"><span class="pre">is_discussion_open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.is_discussion_open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.is_discussion_open" title="Link to this definition">#</a></dt>
+<dd><p>Checks if a discussion is currently open.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if a discussion is open, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.list_discussions">
+<span class="sig-name descname"><span class="pre">list_discussions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.list_discussions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.list_discussions" title="Link to this definition">#</a></dt>
+<dd><p>Lists all existing discussions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of tuples containing the index and code of each discussion.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[Tuple[int, str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.open_discussion">
+<span class="sig-name descname"><span class="pre">open_discussion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.open_discussion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.open_discussion" title="Link to this definition">#</a></dt>
+<dd><p>Opens an existing discussion with the specified code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>code</strong> (<em>str</em>) – The code of the discussion to open.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.run" title="Link to this definition">#</a></dt>
+<dd><p>Starts the terminal interface for user interaction.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.save_discussion">
+<span class="sig-name descname"><span class="pre">save_discussion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.save_discussion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.save_discussion" title="Link to this definition">#</a></dt>
+<dd><p>Saves the current discussion.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.search_history">
+<span class="sig-name descname"><span class="pre">search_history</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.search_history"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.search_history" title="Link to this definition">#</a></dt>
+<dd><p>Searches the complete history of the current discussion for the specified content.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>str</em>) – The content to search for in the discussion history.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.set_system_message">
+<span class="sig-name descname"><span class="pre">set_system_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.set_system_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.set_system_message" title="Link to this definition">#</a></dt>
+<dd><p>Sets the system message for the current discussion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>str</em>) – The content of the system message.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.set_title">
+<span class="sig-name descname"><span class="pre">set_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.set_title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.set_title" title="Link to this definition">#</a></dt>
+<dd><p>Changes the title of the current discussion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>title</strong> (<em>str</em>) – The new title for the current discussion.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.set_token_limit">
+<span class="sig-name descname"><span class="pre">set_token_limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.set_token_limit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.set_token_limit" title="Link to this definition">#</a></dt>
+<dd><p>Sets the token limit for the current discussion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>limit</strong> (<em>int</em>) – The token limit for the current discussion.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.show_history">
+<span class="sig-name descname"><span class="pre">show_history</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.show_history"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.show_history" title="Link to this definition">#</a></dt>
+<dd><p>Displays the complete history of the current discussion.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.user_close_discussion">
+<span class="sig-name descname"><span class="pre">user_close_discussion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.user_close_discussion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.user_close_discussion" title="Link to this definition">#</a></dt>
+<dd><p>Closes the current discussion.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygpt.UserInterface.user_open_discussion">
+<span class="sig-name descname"><span class="pre">user_open_discussion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pygpt/user_interface.html#UserInterface.user_open_discussion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pygpt.UserInterface.user_open_discussion" title="Link to this definition">#</a></dt>
+<dd><p>Lists all existing discussions and allows the user to open one.</p>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="message.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">pygpt.Message</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../usage.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Usage</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface"><code class="docutils literal notranslate"><span class="pre">UserInterface</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.change_model"><code class="docutils literal notranslate"><span class="pre">UserInterface.change_model()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.close_discussion"><code class="docutils literal notranslate"><span class="pre">UserInterface.close_discussion()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.copy_last_assistant_response"><code class="docutils literal notranslate"><span class="pre">UserInterface.copy_last_assistant_response()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.create_new_discussion"><code class="docutils literal notranslate"><span class="pre">UserInterface.create_new_discussion()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.delete_all_discussions"><code class="docutils literal notranslate"><span class="pre">UserInterface.delete_all_discussions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.delete_current_discussion"><code class="docutils literal notranslate"><span class="pre">UserInterface.delete_current_discussion()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.display_info"><code class="docutils literal notranslate"><span class="pre">UserInterface.display_info()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.generate_discussion_code"><code class="docutils literal notranslate"><span class="pre">UserInterface.generate_discussion_code()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.get_api_key"><code class="docutils literal notranslate"><span class="pre">UserInterface.get_api_key()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.handle_command"><code class="docutils literal notranslate"><span class="pre">UserInterface.handle_command()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.handle_gpt_interaction"><code class="docutils literal notranslate"><span class="pre">UserInterface.handle_gpt_interaction()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.handle_input"><code class="docutils literal notranslate"><span class="pre">UserInterface.handle_input()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.is_discussion_open"><code class="docutils literal notranslate"><span class="pre">UserInterface.is_discussion_open()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.list_discussions"><code class="docutils literal notranslate"><span class="pre">UserInterface.list_discussions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.open_discussion"><code class="docutils literal notranslate"><span class="pre">UserInterface.open_discussion()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.run"><code class="docutils literal notranslate"><span class="pre">UserInterface.run()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.save_discussion"><code class="docutils literal notranslate"><span class="pre">UserInterface.save_discussion()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.search_history"><code class="docutils literal notranslate"><span class="pre">UserInterface.search_history()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.set_system_message"><code class="docutils literal notranslate"><span class="pre">UserInterface.set_system_message()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.set_title"><code class="docutils literal notranslate"><span class="pre">UserInterface.set_title()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.set_token_limit"><code class="docutils literal notranslate"><span class="pre">UserInterface.set_token_limit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.show_history"><code class="docutils literal notranslate"><span class="pre">UserInterface.show_history()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.user_close_discussion"><code class="docutils literal notranslate"><span class="pre">UserInterface.user_close_discussion()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pygpt.UserInterface.user_open_discussion"><code class="docutils literal notranslate"><span class="pre">UserInterface.user_open_discussion()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api_doc/user_interface.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025-%Y, Artezaru.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
