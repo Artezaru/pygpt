@@ -1,3 +1,5 @@
+from .user_interface import UserInterface
+
 def __main__() -> None:
     r"""
     Main entry point of the package.
@@ -8,7 +10,8 @@ def __main__() -> None:
         pygpt
         
     """
-    raise NotImplementedError("The main entry point is not implemented yet.")
+    user_interface = UserInterface()
+    user_interface.run()
 
 def __main_gui__() -> None:
     r"""
