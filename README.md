@@ -58,7 +58,7 @@ Run the help command to display all the commands.
 
 ## Authors
 
-- Artezaru <artezaru.websites@proton.me>
+- Artezaru <artezaru.github@proton.me>
 
 - **Git Plateform**: https://github.com/Artezaru/pygpt.git
 - **Online Documentation**: https://Artezaru.github.io/pygpt

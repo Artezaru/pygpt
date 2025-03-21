@@ -43,7 +43,7 @@ Author
 
 The package ``pygpt`` was created by the following authors:
 
-- Artezaru <artezaru.websites@proton.me>
+- Artezaru <artezaru.github@proton.me>
 
 You can access the package and the documentation with the following URL:
 

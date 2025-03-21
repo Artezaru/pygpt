@@ -12,7 +12,7 @@ dynamic = ["dependencies", "version"]
 description = "Python package for managing and interacting with discussions powered by OpenAI's GPT models"
 license = {file = "LICENSE"}
 authors = [
-{name = "Artezaru", email = "artezaru.websites@proton.me"}
+{name = "Artezaru", email = "artezaru.github@proton.me"}
 ]
 classifiers = [
   "Programming Language :: Python"
